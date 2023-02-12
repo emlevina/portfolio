@@ -1,0 +1,75 @@
+.fullscreen {
+    height: 100vh;
+    min-height: 500rem;
+    padding: 60rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 40%;
+    width: 50%;
+    height: 100vh;
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 20%), url(../img/me3.jpg);
+    background-position: 20% 75%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -3;
+}
+
+.about {
+    max-width: 400rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 70rem;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    gap: 20rem;
+    flex-wrap: wrap;
+}
+
+.list a:hover {
+    color: var(--color-blue);
+}
+
+.scrollPrompt {
+    opacity: 0.5;
+}
+
+.menu {
+    composes: list;
+    text-transform: lowercase;
+    position: fixed;
+    right: 60rem;
+    /* mix-blend-mode: overlay; */
+}
+
+.title {
+    font-size: 45rem;
+    line-height: 1;
+    margin-bottom: 20rem;
+}
+
+.textAccent {
+    letter-spacing: 0.2em;
+    color: var(--color-blue);
+    transition: color 0.3s ease;
+}
+
+.textAccent:hover {
+    color: var(--color-pink);
+}
+
+.aboutText {
+    line-height: 1.5;
+    text-align: justify;
+    font-size: 24rem;
+}
