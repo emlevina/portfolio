@@ -6,15 +6,22 @@
 
 :root {
     font-size: 6.25%;
+    --color-white: rgba(255, 255, 255, 1);
     --color-gray: rgb(42, 42, 42);
     --color-blue: blue;
-    --color-pink:  rgb(255, 1, 192);
+    --color-pink: rgb(255, 1, 192);
+}
+
+.dark {
+    --color-white: rgb(23, 23, 23);
+    --color-gray: rgb(255, 255, 255);
+    --color-blue: rgb(255, 1, 192);
+    --color-pink: blue;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16rem;
-    color: var(--color-gray);
 }
 
 a:link {
@@ -30,6 +37,8 @@ a:visited {
     color: inherit
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     text-transform: uppercase;
 }

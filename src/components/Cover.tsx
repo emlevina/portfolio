@@ -1,7 +1,10 @@
 import React, { MouseEventHandler } from 'react';
 import './Cover.css'
 import styles from './cover.module.css'
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import ThemeSwitcher from './ThemeSwitcher';
+import { ThemeContext } from '../context/ThemeContext';
+
 
 const Nav = () => {
     return (
@@ -104,12 +107,14 @@ const About = () => {
 }
 
 const Cover = () => {
+    const { toggleTheme, theme } = useContext(ThemeContext);
     return (
-        <section className={styles.fullscreen} id="about">
+        <section className={`${styles.fullscreen} ${theme}`} id="about">
+            <ThemeSwitcher />
             <Nav />
             <About />
             <p className={styles.scrollPrompt}>Scroll to see the projects</p>
-            <div className={styles.bg}></div>
+            <div className={`${styles.bg} ${theme}`}></div>
         </section>
     );
 };
