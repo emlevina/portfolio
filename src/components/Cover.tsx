@@ -1,36 +1,7 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import './Cover.css'
 import styles from './cover.module.css'
-
-const translations = {
-    eng: {
-        firstname: 'Ekaterina',
-        surname: 'Orlova',
-        desc1: 'Mother, developer, ',
-        desc2: 'huge ',
-        frozen: 'Frozen',
-        desc3: ' fan'
-    },
-    rus: {
-        firstname: 'Екатерина',
-        surname: 'Орлова',
-        desc1: 'Мать, разработчица, \n',
-        desc2: 'фанат ',
-        frozen: 'Холодного сердца',
-        desc3: ''
-    },
-    heb: {
-        firstname: 'יקטרינה',
-        surname: 'אורלוב',
-        desc1: 'אמא, מתכנתת,',
-        desc2: 'מעריצה ענקית של',
-        frozen: 'פרוזן ',
-        desc3: ''
-    }
-};
-
-const languages = [{ text: 'Russian'}, { text: 'Hebrew' }, { text: 'English' }];
-const skills = [{ text: 'CSS/HTML' }, { text: 'JavaScript' }, { text: 'Node.js' }, { text: 'React' }];
+import { useState } from 'react';
 
 const Nav = () => {
     return (
@@ -43,40 +14,34 @@ const Nav = () => {
     )
 }
 
-const ListItem = ({ item, onClick }: { item: Item,  onClick?: React.MouseEventHandler }) => {
-    return <li><a href="#about" onClick={onClick}>{item.text}</a></li>
+const ListItem = ({ item, callback }: { item: string, callback?: MouseEventHandler }) => {
+    return callback ? (
+        <li><a href='#about' onClick={callback} id={item.toLowerCase().slice(0, 3)}>{item}</a></li>
+    ) : (
+        <li>{item}</li>
+    )
 }
 
-interface Item {
-    text: string,
-}
 
+const List = ({ items, callback }: { items: string[], callback?: MouseEventHandler }) => {
 
-const List = ({ items }: { items: Item[] }) => {
-    const func = () => {
-        console.log('d')
-    }
     return (
         <ul className={styles.list}>
-            {items.map(item => <ListItem item={item} onClick={func} />)}
+            {items.map(item => <ListItem item={item} callback={callback} key={`${item.toLowerCase()}`}/>)}
         </ul>
     )
 }
 
 interface Translation {
-    translation: {
-        firstname: string,
-        surname: string,
-        desc1: string,
-        desc2: string,
-        frozen: string,
-        desc3: string
-    }
+    firstname: string,
+    surname: string,
+    desc1: string,
+    desc2: string,
+    frozen: string,
+    desc3: string
 }
 
-const AboutText = ({ translation }: Translation) => {
-    const { firstname, surname, desc1, desc2, desc3, frozen } = translation
-
+const AboutText = ({ translation: { firstname, surname, desc1, desc2, desc3, frozen } }: { translation: Translation }) => {
     return (
         <div>
             <h1 className={styles.title}>
@@ -93,10 +58,46 @@ const AboutText = ({ translation }: Translation) => {
 }
 
 const About = () => {
+    const [lang, setLang] = useState('eng')
+
+    const translations: { [key: string]: Translation } = {
+        eng: {
+            firstname: 'Ekaterina',
+            surname: 'Orlova',
+            desc1: 'Mother, developer, ',
+            desc2: 'huge ',
+            frozen: 'Frozen',
+            desc3: ' fan'
+        },
+        rus: {
+            firstname: 'Екатерина',
+            surname: 'Орлова',
+            desc1: 'Мать, разработчица, \n',
+            desc2: 'фанат ',
+            frozen: 'Холодного сердца',
+            desc3: ''
+        },
+        heb: {
+            firstname: 'יקטרינה',
+            surname: 'אורלוב',
+            desc1: 'אמא, מתכנתת,',
+            desc2: 'מעריצה ענקית של',
+            frozen: 'פרוזן ',
+            desc3: ''
+        }
+    };
+
+    const languages = ['Russian', 'Hebrew', 'English'];
+    const skills = ['CSS/HTML', 'JavaScript', 'TypeScript', 'Node.js', 'React'];
+
+    const onClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        setLang((e.target as HTMLAnchorElement).id)
+    }
+
     return (
         <div className={styles.about}>
-            <List items={languages} />
-            <AboutText translation={translations.eng} />
+            <List items={languages} callback={onClick} />
+            <AboutText translation={translations[lang]} />
             <List items={skills} />
         </div>
     )
