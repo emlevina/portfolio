@@ -1,24 +1,36 @@
 import React, { useContext } from "react";
-import { Checkbox, Icon } from 'semantic-ui-react'
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Switch from '@mui/material/Switch';
 import { ThemeContext } from "../context/ThemeContext";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-interface Props {}
+const themeMui = createTheme({
+  typography: {
+    fontSize: 224,
+    fontFamily: 'Montserrat'
+  },
+});
+
+interface Props { }
 
 const ThemeSwitcher: React.FC<Props> = (): JSX.Element => {
-  const { toggleTheme, theme } = useContext(ThemeContext);
+  const { theme, toggleTheme } = useContext(ThemeContext);
+  const checked = theme === 'dark' ? true : false
 
   return (
-    <div style={{ textAlign: "center" }}>
-      <Icon
-        name="sun outline"
-        style={{ position: "relative", top: "-5px", left: "-5px" }}
+    <ThemeProvider theme={themeMui}>
+      <FormControlLabel
+        value="value"
+        control={<Switch
+          checked={checked}
+          onChange={toggleTheme}
+          size="small"
+          inputProps={{ 'aria-label': 'controlled' }}
+        />}
+        label="dark mode"
+        labelPlacement="end"
       />
-      <Checkbox onChange={toggleTheme} toggle />
-      <Icon
-        name="moon outline"
-        style={{ position: "relative", top: "-5px", left: "10px" }}
-      />
-    </div>
+    </ThemeProvider>
   );
 };
 

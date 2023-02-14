@@ -10,6 +10,8 @@
     --color-gray: rgb(42, 42, 42);
     --color-blue: blue;
     --color-pink: rgb(255, 1, 192);
+    --color-medium-gray: #bbbbbb;
+    --color-light-gray: rgb(242, 242, 242);
 }
 
 .dark {
@@ -17,12 +19,16 @@
     --color-gray: rgb(255, 255, 255);
     --color-blue: rgb(255, 1, 192);
     --color-pink: blue;
+    --color-medium-gray: #494949;
+    --color-light-gray: rgb(41, 41, 41);
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16rem;
+    background-color: var(--color-white);
 }
+
 
 a:link {
     text-decoration: none;

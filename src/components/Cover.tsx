@@ -1,17 +1,17 @@
 import React, { MouseEventHandler } from 'react';
-import './Cover.css'
 import styles from './cover.module.css'
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import ThemeSwitcher from './ThemeSwitcher';
-import { ThemeContext } from '../context/ThemeContext';
 
 
 const Nav = () => {
     return (
         <nav className="nav">
+            
             <ul className={styles.menu}>
                 <li>katya.leemi@gmail.com</li>
                 <li>Portfolio</li>
+                <ThemeSwitcher />
             </ul>
         </nav>
     )
@@ -107,14 +107,12 @@ const About = () => {
 }
 
 const Cover = () => {
-    const { toggleTheme, theme } = useContext(ThemeContext);
     return (
-        <section className={`${styles.fullscreen} ${theme}`} id="about">
-            <ThemeSwitcher />
+        <section className={styles.fullscreen} id="about">
             <Nav />
             <About />
             <p className={styles.scrollPrompt}>Scroll to see the projects</p>
-            <div className={`${styles.bg} ${theme}`}></div>
+            <div className={styles.bg}></div>
         </section>
     );
 };

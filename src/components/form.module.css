@@ -1,5 +1,13 @@
-
-/* form */
+.fullscreen {
+    height: 100vh;
+    min-height: 500rem;
+    padding: 60rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: var(--color-gray);
+    background-color: var(--color-white);
+}
 
 .form {
     display: flex;
@@ -14,9 +22,7 @@
     gap: 6rem;
 }
 
-/**
-* Add a transition to the label and input.
-*/
+
 label,
 .input {
     font-size: 14rem;
@@ -26,13 +32,14 @@ label,
 
 .input {
     border: 0;
-    border-bottom: 1px solid #ccc;
+    color: var(--color-gray);
+    border-bottom: 1px solid var(--color-medium-gray);
     font-family: inherit;
     -webkit-appearance: none;
     border-radius: 0;
     cursor: text;
     padding: 8rem;
-    background-color: rgb(244, 244, 244);
+    background-color: var(--color-light-gray);
 }
 
 
@@ -43,16 +50,9 @@ textarea.input {
 
 .input:focus {
     outline: 0;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid var(--color-blue);
 }
 
-
-/**
-* Translate down and scale the label up to cover the placeholder,
-* when following an input (with placeholder-shown support).
-* Also make sure the label is only on one row, at max 2/3rds of the
-* field—to make sure it scales properly and doesn't wrap.
-*/
 .input:placeholder-shown+label {
     cursor: text;
     text-align: left;
@@ -65,33 +65,20 @@ textarea.input {
     color: rgb(86, 86, 86);
 }
 
-/**
-* By default, the placeholder should be transparent. Also, it should 
-* inherit the transition.
-*/
 ::-webkit-input-placeholder {
     opacity: 0;
     transition: inherit;
 }
 
-/**
-* Show the placeholder when the input is focused.
-*/
 .input:focus::-webkit-input-placeholder {
     opacity: 1;
 }
 
-
-/**
-* When the element is focused, remove the label transform.
-* Also, do this when the placeholder is _not_ shown, i.e. when 
-* there's something in the input at all.
-*/
 .input:not(:placeholder-shown)+label,
 .input:focus+label {
     transform-origin: left bottom;
     transform: translate(0) scale(0.8);
-    color: blue;
+    color: var(--color-blue);
     cursor: pointer;
 }
 
@@ -106,18 +93,18 @@ textarea.input {
 .btn {
     border: 0;
     padding: 8rem;
-    background: blue;
+    background: var(--color-blue);
     font-family: inherit;
     color: white;
     transition: background-color 0.2s;
 }
 
 .btn:hover{
-    background:rgb(255, 1, 192);
+    background: var(--color-pink);
 }
 
 .btn:active{
-    background:rgb(255, 1, 192);
+    background:var(--color-pink);
 }
 
 .btn:focus{
