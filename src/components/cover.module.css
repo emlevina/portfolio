@@ -46,6 +46,34 @@
 
 .scrollPrompt {
     opacity: 0.5;
+    animation: prigskok 7s infinite;
+    position: relative;
+}
+
+@keyframes prigskok {
+    20% {
+        top: 0
+    }
+
+    25% {
+        top: -10px;
+    }
+
+    30% {
+        top: 5px;
+    }
+
+    35% {
+        top: -7px;
+    }
+
+    40% {
+        top: 3px;
+    }
+
+    45% {
+        top: 0;
+    }
 }
 
 .menu {

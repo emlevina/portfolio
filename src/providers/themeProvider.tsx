@@ -4,11 +4,16 @@ import React, { useState } from "react";
 
 interface Props {
     children: React.ReactNode;
-  }
+}
 
 export const ThemeProvider: React.FC<Props> = ({ children }): JSX.Element => {
-    const [theme, setTheme] = useState<"light" | "dark">("light");
+    const darkThemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+    const [theme, setTheme] = useState<"light" | "dark">(darkThemeMq.matches ? "dark" : "light");
 
+    if(theme === 'dark'){
+        document.body.classList.add('dark')
+    }
+    
     const toggleTheme = (): void => {
         const val = theme === "light" ? "dark" : "light";
         setTheme(val);

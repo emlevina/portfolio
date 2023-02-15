@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import ThemeProvider from './providers/themeProvider';
+import { LangProvider } from './providers/langProvider';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <ThemeProvider>
-    <App />
+    <LangProvider >
+      <App />
+    </LangProvider >
   </ThemeProvider>
 );
