@@ -26,7 +26,9 @@ const ThemeSwitcher: React.FC<Props> = (): JSX.Element => {
           onChange={toggleTheme}
           size="small"
           inputProps={{ 'aria-label': 'controlled' }}
+         
         />}
+        style={{ fontWeight: 100 }}
         label="dark mode"
         labelPlacement="end"
       />

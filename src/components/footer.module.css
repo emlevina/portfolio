@@ -1,0 +1,16 @@
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 20rem;
+    max-width: 200rem;
+}
+
+.left p {
+    font-size: 14rem;
+}
+
+.textAccent {
+    letter-spacing: 0.315em;
+    color: var(--color-blue);
+    transition: color 0.3s ease;
+}

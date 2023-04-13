@@ -26,6 +26,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16rem;
+    font-weight: normal;
     background-color: var(--color-white);
 }
 
@@ -47,4 +48,11 @@ h1,
 h2,
 h3 {
     text-transform: uppercase;
+    font-weight: 900;
+}
+
+footer {
+    padding: 60rem;
+    color: var(--color-gray);
+    background-color: var(--color-light-gray);
 }

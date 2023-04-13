@@ -1,0 +1,114 @@
+.fullscreen {
+    min-height: min(500rem, 100vh);
+    padding: 60rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    color: var(--color-gray);
+    background-color: var(--color-white);
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10rem;
+}
+
+.card {
+    width: 300rem;
+    /* height: 350rem; */
+    flex-grow: 1;
+    max-width: 400rem;
+    /* padding: 30rem; */
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+.card img {
+    /* position: absolute; */
+    /* z-index: -1; */
+    /* right: -10rem; */
+    top: 0;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.desc {
+    display: none;
+}
+
+.cardHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cardBody {
+    z-index: 3;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20rem;
+    justify-content: space-between;
+    padding: 20rem 0;
+}
+
+.cardBody h2,
+.cardBody h3 {
+    padding: 5rem;
+    background: var(--color-white);
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: flex-start;
+    text-transform: lowercase;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    /* justify-content: flex-start; */
+    text-transform: lowercase;
+}
+
+.link {
+    /* align-self: center; */
+    background: var(--color-gray);
+    color: var(--color-white);
+    padding: 5rem;
+    text-decoration: none;
+}
+
+.link:visited{
+    color: var(--color-white);
+}
+
+.tag {
+    background: var(--color-gray);
+    color: var(--color-white);
+    padding: 5rem;
+}
+
+.bg-blue {
+    background: var(--color-blue);
+    /* border: 1px solid var(--color-blue); */
+}
+
+.bg-pink {
+    background: var(--color-pink);
+    /* border: 1px solid var(--color-pink); */
+}
+
+.bg-grey {
+    background: var(--color-light-gray);
+    /* border: 1px solid var(--color-light-gray); */
+}
