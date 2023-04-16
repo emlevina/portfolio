@@ -1,6 +1,5 @@
 .fullscreen {
-    height: 100vh;
-    min-height: 500rem;
+    min-height: max(500rem, 100vh);
     padding: 60rem;
     display: flex;
     flex-direction: column;

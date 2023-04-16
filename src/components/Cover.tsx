@@ -97,7 +97,7 @@ const AboutText = () => {
 const About = () => {
     
     const languages = ['Russian', 'Hebrew', 'English'];
-    const skills = ['CSS/HTML', 'JavaScript', 'TypeScript', 'Node.js', 'React'];
+    const skills = ['CSS/HTML', 'JavaScript', 'TypeScript', 'Node.js', 'Express', 'React', 'Redux', 'MongoDB', 'Postgres'];
     
 
     return (

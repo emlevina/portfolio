@@ -9,6 +9,16 @@ const themeMui = createTheme({
     fontSize: 224,
     fontFamily: 'Montserrat'
   },
+  components: {
+    MuiTypography: {
+      styleOverrides: {
+        root: {
+          fontWeight: 300,
+          fontFamily: 'Montserrat'
+        }
+      }
+    },
+  }
 });
 
 interface Props { }

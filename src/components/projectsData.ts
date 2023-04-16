@@ -1,65 +1,72 @@
 export const projectsData: ProjectType[] = [
     {
-        id: '1',
+        id: '3',
         title: 'Real-time Chat App',
-        tags: ['react', 'node.js', 'express', 'mongodb', 'socket.io', 'mongoose', 'REST'],
+        tags: {
+            frontend: ['react'],
+            backend: ['node.js', 'express', 'mongodb', 'mongoose'],
+            both: ['socket.io', 'REST']
+        },
         links: [
             { name: 'demo', url: 'https://chat-app-w22c.onrender.com/' },
             { name: 'git', url: '' }
         ],
-        desc: 'Project description blabla. Project description blabla. Project description blabla.',
-        img: 'project1',
-        background: 'bg-blue'
+        background: 'bg-grey'
     },
     {
-        id: '2',
+        id: '1',
         title: 'Online Therapy Service',
-        tags: ['node.js', 'express', 'react', 'mongodb', 'socket.io', 'Material-UI', 'mongoose', 'jwt', 'tailwind'],
+        tags: {
+            frontend: ['react', 'Material-UI', 'tailwind'],
+            backend: ['node.js', 'express', 'mongodb', 'mongoose',],
+            both: ['socket.io', 'jwt',]
+        },
         links: [
             { name: 'demo', url: 'https://online-therapy-service.onrender.com/' },
             { name: 'git', url: 'https://github.com/emlevina/online-therapy-service' }
         ],
-        desc: 'Project description blabla. Project description blabla. Project description blabla.',
-        img: 'project2',
-        background: 'bg-grey'
+        background: 'bg-blue'
     },
     {
-        id: '3',
+        id: '6',
         title: 'Colorfull game',
-        tags: ['vanilla js', 'css', 'DOM API'],
-        links: [{ name: 'demo', url: 'https://emlevina.github.io/Hakathone1/' }, { name: 'git', url: 'https://github.com/emlevina/Hakathone1' }],
-        desc: 'Project description blabla. Project description blabla. Project description blabla.',
-        img: 'project2',
-        background: 'bg-grey'
+        tags: { frontend: ['vanilla js', 'css', 'DOM API'] },
+        links: [
+            { name: 'demo', url: 'https://emlevina.github.io/Hakathone1/' },
+            { name: 'git', url: 'https://github.com/emlevina/Hakathone1' }
+        ],
+        background: 'bg-pink'
     },
     {
         id: '4',
         title: 'To-do App',
-        tags: ['react', 'redux', 'node.js', 'express', 'mongodb', 'mongoose'],
-        links: [{ name: 'git', url: 'https://github.com/emlevina/she-codes-todo' }, {
-            name: 'demo',
-            url: 'https://emlevina.github.io/she-codes-todo/'
-        }],
-        desc: 'Project description blabla. Project description blabla. Project description blabla.',
-        img: 'project2',
+        tags: {
+            frontend: ['react', 'redux',],
+            backend: ['node.js', 'express', 'mongodb', 'mongoose']
+        },
+        links: [
+            {
+                name: 'demo',
+                url: 'https://emlevina.github.io/she-codes-todo/'
+            }, { name: 'git', url: 'https://github.com/emlevina/she-codes-todo' }
+        ],
         background: 'bg-grey'
     },
     {
         id: '5',
         title: 'Trading center application',
-        tags: ['react', 'chart.js', 'mock sw'],
-        links: [{ name: 'demo', url: 'https://emlevina.github.io/shecodes-final/' }, { name: 'git', url: 'https://github.com/emlevina/shecodes-final' }],
-        desc: 'Project description blabla. Project description blabla. Project description blabla.',
-        img: 'project2',
-        background: 'bg-pink'
+        tags: { frontend: ['react', 'chart.js', 'mock sw'] },
+        links: [
+            { name: 'demo', url: 'https://emlevina.github.io/shecodes-final/' },
+            { name: 'git', url: 'https://github.com/emlevina/shecodes-final' }
+        ],
+        background: 'bg-grey'
     },
     {
-        id: '6',
+        id: '2',
         title: 'Portfolio',
-        tags: ['react', 'typescript', 'Material-UI'],
-        links: [{ name: 'git', url: '' }],
-        desc: 'Project description blabla. Project description blabla. Project description blabla.',
-        img: 'project2',
+        tags: { frontend: ['react', 'typescript', 'Material-UI'] },
+        links: [{ name: 'git', url: 'https://github.com/emlevina/portfolio' }],
         background: 'bg-grey'
     },
 ]
@@ -67,9 +74,7 @@ export const projectsData: ProjectType[] = [
 export type ProjectType = {
     id: string,
     title: String,
-    tags: string[],
+    tags: { frontend: string[], backend?: string[], both?: string[] },
     links: { name: string; url: string; }[],
-    desc: String,
-    img: string,
     background: string
 }

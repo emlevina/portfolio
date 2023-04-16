@@ -8,7 +8,8 @@
     font-size: 6.25%;
     --color-white: rgba(255, 255, 255, 1);
     --color-gray: rgb(42, 42, 42);
-    --color-blue: blue;
+    --color-gray-only-light: rgb(255, 255, 255);
+    --color-blue: rgb(0, 81, 255);
     --color-pink: rgb(255, 1, 192);
     --color-medium-gray: #8f8f8f;
     --color-light-gray: rgb(242, 242, 242);
@@ -17,6 +18,7 @@
 .dark {
     --color-white: rgb(23, 23, 23);
     --color-gray: rgb(255, 255, 255);
+    --color-gray-only-light: rgb(255, 251, 251);
     --color-blue: rgb(255, 1, 192);
     --color-pink: blue;
     --color-medium-gray: #a0a0a0;
