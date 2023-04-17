@@ -1,0 +1,9 @@
+.fullscreen {
+    min-height: max(500rem, 100vh);
+    padding: 60rem;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: stretch; */
+    color: var(--color-gray);
+    background-color: var(--color-white);
+}

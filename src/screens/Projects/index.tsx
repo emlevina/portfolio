@@ -34,7 +34,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
 
 const Projects = () => {
     return (
-        <section className={styles.fullscreen}>
+        <section className={styles.parent}>
             <div className={styles.gallery}>{projectsData.sort((a, b) => a.id > b.id ? 1 : -1).map(prj => <ProjectCard project={prj} key={prj.id} />)}</div>
         </section>
     );

@@ -1,0 +1,27 @@
+.list {
+    list-style: none;
+    font-weight: 300;
+    display: flex;
+    gap: 20rem;
+    flex-wrap: wrap;
+    align-items: center;
+    z-index: 5;
+}
+
+.list a:hover {
+    color: var(--color-blue);
+}
+
+.menu {
+    composes: list;
+    text-transform: lowercase;
+    position: fixed;
+    right: 60rem;
+}
+
+
+@media screen and (max-width: 600px) {
+    .menu {
+        position: static;
+    }
+}

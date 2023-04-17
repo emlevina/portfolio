@@ -1,16 +1,14 @@
-.fullscreen {
-    min-height: max(500rem, 100vh);
-    padding: 60rem;
+.parent {
+    flex-grow: 1;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: var(--color-gray);
-    background-color: var(--color-white);
+    align-items: center;
 }
 
 .gallery {
+    
     background-color: var(--color-white);
     z-index: 6;
+    position: relative;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
 import styles from './form.module.css';
 import axios from 'axios';
-
-type FieldData = {
-    tag: 'input' | 'textarea',
-    type?: 'text' | 'email',
-    name: string,
-    id: string,
-    placeholder: string,
-    required: boolean,
-    prompt: string
-}
+import { formData, FieldData } from './formData'
 
 type FieldProps = {
     data: FieldData,
@@ -33,36 +24,6 @@ const Field: React.FC<FieldProps> = ({ data: { tag, type, name, id, placeholder,
 }
 
 const Form = () => {
-    const formData: FieldData[] = [
-        {
-            tag: 'input',
-            type: 'email',
-            name: 'email',
-            id: 'email',
-            placeholder: 'me@domain.com',
-            required: true,
-            prompt: 'Your e-mail *'
-        },
-
-        {
-            tag: 'input',
-            type: 'text',
-            name: 'name',
-            id: 'name',
-            placeholder: 'Ekaterina Orlova',
-            required: false,
-            prompt: 'How can I call you?'
-        },
-        {
-            tag: 'textarea',
-            name: 'textarea',
-            id: 'textarea',
-            placeholder: 'Your inquiry',
-            required: false,
-            prompt: 'And you want to tell me...'
-        },
-    ]
-
     const [email, setEmail] = useState('')
     const [name, setName] = useState('')
     const [body, setBody] = useState('')
@@ -81,12 +42,13 @@ const Form = () => {
         };
         axios.post(`https://api.telegram.org/bot${tg.token}/sendMessage`, obj)
             .then(res => {
-                setMessage(`Thank you${name && `, ${name}`}, message is sent!`)
+                setMessage(`Thank you${name && `, ${name}`}, your message is sent!`)
                 console.log(res.data)
             })
             .catch(err => {
                 setMessage(`Sorry${name && `, ${name}`}, smth is wrong!`)
-                console.log(err)})
+                console.log(err)
+            })
             .finally(() => {
                 setEmail('')
                 setBody('')
@@ -95,13 +57,13 @@ const Form = () => {
     }
 
     return (
-        <section className={styles.fullscreen} id="form">
+        <section className={styles.parent} id="form">
             <h1 className={styles.title}>{message}</h1>
 
             <form className={styles.form} onSubmit={handleSubmit}>
-                <Field data={formData[0]} setData={setEmail} fieldValue={email} />
-                <Field data={formData[1]} setData={setName} fieldValue={name} />
-                <Field data={formData[2]} setData={setBody} fieldValue={body} />
+                <Field data={formData.email} setData={setEmail} fieldValue={email} />
+                <Field data={formData.name} setData={setName} fieldValue={name} />
+                <Field data={formData.body} setData={setBody} fieldValue={body} />
                 <button type="submit" className={styles.btn}>Send</button>
             </form>
 
