@@ -97,6 +97,10 @@
 
 @media screen and (max-width: 600px) {
     .bg {
-        background-image: none;
+        display: none;
+    }
+
+    .scrollPrompt {
+        visibility: hidden;
     }
 }

@@ -7,3 +7,17 @@
     color: var(--color-gray);
     background-color: var(--color-white);
 }
+
+
+@media screen and (max-width: 800px) {
+    .fullscreen {
+        padding: 30rem;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .fullscreen {
+        padding: 15rem;
+    }
+}
