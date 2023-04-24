@@ -35,7 +35,6 @@ const Form = () => {
     }
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(email, name, body)
         const obj = {
             chat_id: tg.chatId, // Telegram chat id
             text: { email, name, body } // The text to send
@@ -43,7 +42,6 @@ const Form = () => {
         axios.post(`https://api.telegram.org/bot${tg.token}/sendMessage`, obj)
             .then(res => {
                 setMessage(`Thank you${name && `, ${name}`}, your message is sent!`)
-                console.log(res.data)
             })
             .catch(err => {
                 setMessage(`Sorry${name && `, ${name}`}, smth is wrong!`)
