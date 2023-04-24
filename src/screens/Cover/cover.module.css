@@ -20,18 +20,18 @@
 }
 
 .about {
-    max-width: 400rem;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 70rem;
+    gap: 70px;
 }
 
 .list {
     list-style: none;
     font-weight: 300;
     display: flex;
-    gap: 20rem;
+    gap: 20px;
     flex-wrap: wrap;
     align-items: center;
     z-index: 5;
@@ -74,9 +74,9 @@
 }
 
 .title {
-    font-size: 45rem;
+    font-size: 45px;
     line-height: 1;
-    margin-bottom: 20rem;
+    margin-bottom: 20px;
 }
 
 .textAccent {
@@ -92,7 +92,7 @@
 .aboutText {
     line-height: 1.5;
     text-align: justify;
-    font-size: 24rem;
+    font-size: 24px;
 }
 
 @media screen and (max-width: 600px) {

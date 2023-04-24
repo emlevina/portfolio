@@ -11,13 +11,13 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 10rem;
+    gap: 10px;
 }
 
 .card {
-    width: 300rem;
+    width: 300px;
     flex-grow: 1;
-    max-width: 400rem;
+    max-width: 400px;
 }
 
 .cardHeader {
@@ -31,14 +31,14 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 20rem;
+    gap: 20px;
     justify-content: flex-start;
-    padding: 20rem 0;
+    padding: 20px 0;
 }
 
 .cardBody h2,
 .cardBody h3 {
-    padding: 5rem;
+    padding: 5px;
     background: var(--color-gray);
     color: var(--color-white);
 }
@@ -56,7 +56,7 @@
 .tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 5rem;
+    gap: 5px;
     text-transform: lowercase;
 }
 
@@ -83,7 +83,7 @@
 .tag {
     background: var(--color-white);
     color: var(--color-gray);
-    padding: 5rem;
+    padding: 5px;
     /* border: 1px solid var(--color-gray); */
 }
 

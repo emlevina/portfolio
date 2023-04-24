@@ -2,7 +2,7 @@
     list-style: none;
     font-weight: 300;
     display: flex;
-    gap: 20rem;
+    gap: 20px;
     flex-wrap: wrap;
     align-items: center;
     z-index: 5;
@@ -16,7 +16,7 @@
     composes: list;
     text-transform: lowercase;
     position: fixed;
-    right: 60rem;
+    right: 60px;
 }
 
 

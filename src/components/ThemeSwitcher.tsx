@@ -6,7 +6,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 const themeMui = createTheme({
   typography: {
-    fontSize: 224,
+    fontSize: 14,
     fontFamily: 'Montserrat'
   },
   components: {

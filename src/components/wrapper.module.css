@@ -1,6 +1,6 @@
 .fullscreen {
-    min-height: max(500rem, 100vh);
-    padding: 60rem;
+    min-height: max(500px, 100vh);
+    padding: 60px;
     display: flex;
     flex-direction: column;
     /* justify-content: stretch; */
@@ -11,13 +11,13 @@
 
 @media screen and (max-width: 800px) {
     .fullscreen {
-        padding: 30rem;
+        padding: 30px;
     }
 }
 
 
 @media screen and (max-width: 600px) {
     .fullscreen {
-        padding: 15rem;
+        padding: 15px;
     }
 }

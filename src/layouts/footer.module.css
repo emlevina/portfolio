@@ -1,9 +1,9 @@
 .footer {
-    padding: 60rem;
+    padding: 60px;
     color: var(--color-gray);
     background-color: var(--color-light-gray);
     display: flex;
-    gap: 20rem;
+    gap: 20px;
     justify-content: space-between;
     /* align-items: center; */
 }
@@ -11,12 +11,12 @@
 .left {
     display: flex;
     flex-direction: column;
-    gap: 20rem;
-    max-width: 200rem;
+    gap: 20px;
+    max-width: 200px;
 }
 
 .left p {
-    font-size: 14rem;
+    font-size: 14px;
 }
 
 .textAccent {
@@ -29,9 +29,9 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 5rem;
+    gap: 5px;
     flex-wrap: wrap;
-    font-size: 14rem;
+    font-size: 14px;
 }
 
 .list a:hover {
@@ -41,13 +41,13 @@
 
 @media screen and (max-width: 800px) {
     .footer {
-        padding: 30rem;
+        padding: 30px;
     }
 }
 
 
 @media screen and (max-width: 600px) {
     .footer {
-        padding: 15rem;
+        padding: 15px;
     }
 }
