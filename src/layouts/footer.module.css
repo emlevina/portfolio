@@ -1,3 +1,13 @@
+.footer {
+    padding: 60rem;
+    color: var(--color-gray);
+    background-color: var(--color-light-gray);
+    display: flex;
+    gap: 20rem;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+
 .left {
     display: flex;
     flex-direction: column;
@@ -13,4 +23,31 @@
     letter-spacing: 0.315em;
     color: var(--color-blue);
     transition: color 0.3s ease;
+}
+
+.list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    flex-wrap: wrap;
+    font-size: 14rem;
+}
+
+.list a:hover {
+    color: var(--color-blue);
+}
+
+
+@media screen and (max-width: 800px) {
+    .footer {
+        padding: 30rem;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .footer {
+        padding: 15rem;
+    }
 }
